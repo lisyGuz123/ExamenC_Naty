@@ -7,9 +7,9 @@ void ordenar_departas(char departa[][20], int cantidad){
     for (int i = 0; i<cantidad;i++) {
         for (int j = 0;j<cantidad;j++) {
             if (strcmp(departa[j], departa[i])>0) {
-                strcpy(temp, departa[j]);
-                strcpy(departa[j], departa[i]);
-                strcpy(departa[i], temp);
+                strcpy(temp, departa[i]);
+                strcpy(departa[i], departa[j]);
+                strcpy(departa[j], temp);
             }
         }
     }
