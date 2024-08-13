@@ -11,7 +11,7 @@ struct Estudiantes {
 };
 
 void registrar();
-void mostrar();
+void listar();
 void buscar();
 
 int main() {
@@ -59,16 +59,16 @@ void registrar() {
     scanf("%d",&estudiante.edad);
 
 
-    fprintf(fp, "carnet del estudiante: %s\n", estudiante.carnet);
-    fprintf(fp, "nombre del estudiante: %s\n", estudiante.nombre);
-    fprintf(fp, "Grado del estudiante: %s\n", estudiante.grado);
-    fprintf(fp, "departamento del estudiante: %s\n", estudiante.departamento);
-    fprintf(fp, "Edad del estudiante: %d\n", estudiante.edad);
+    fprintf(fp, "%s\n", estudiante.carnet);
+    fprintf(fp, "%s\n", estudiante.nombre);
+    fprintf(fp, "%s\n", estudiante.grado);
+    fprintf(fp, "%s\n", estudiante.departamento);
+    fprintf(fp, "%d\n", estudiante.edad);
     fprintf(fp, "-------------------------\n");
     fclose(fp);
 }
 
-void mostrar() {
+void listar() {
     FILE *fp;
     char leido[100];
     fp = fopen("estudiantes.txt", "r");
@@ -90,7 +90,7 @@ void buscar() {
     int encontrado = 0;
 
     printf("Ingrese el carnet del estudiante a buscar: ");
-    scanf("%s", carnet);
+    scanf("%s", &carnet);
 
     fp = fopen("estudiantes.txt", "r");
     while (fscanf(fp, "nombre del estudiante: %s\n", &estudiante.nombre) != EOF) {
