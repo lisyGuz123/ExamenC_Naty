@@ -1,0 +1,6 @@
+carnet del estudiante: 2365
+nombre del estudiante: Natalia
+Grado del estudiante: 5to
+departamento del estudiante: Quetzaltenango
+Edad del estudiante: 19
+-------------------------
