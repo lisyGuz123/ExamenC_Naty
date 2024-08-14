@@ -1,0 +1,530 @@
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~
+$ cd desktop
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop
+$ mkdir EXAMENC
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop
+$ cd EXAMENC
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC
+$ code .
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC
+$ touch ejercicios.txt
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC
+$ touch .gitignore
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC
+$ git init
+Initialized empty Git repository in C:/Users/educacion.ciem/Desktop/EXAMENC/.git/
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main)
+$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        ejercicios.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main)
+$ git add .
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main)
+$ git commit -m "primer commit"
+[main (root-commit) 7ad49d9] primer commit
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 .gitignore
+ create mode 100644 ejercicios.txt
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main)
+$ git log
+commit 7ad49d9afbaca4e5c1081d0fb592bc9bb08ee9b5 (HEAD -> main)
+Author: Natalia <guzmansitaprado@gmail.com>
+Date:   Tue Aug 13 09:34:17 2024 -0600
+
+    primer commit
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main)
+$ git branch Equipo1
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main)
+$ git switch Equipo1
+Switched to branch 'Equipo1'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo1)
+$ touch programa1.c
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo1)
+$ git switch main
+Switched to branch 'main'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main)
+$ git switch Equipo1
+Switched to branch 'Equipo1'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo1)
+$ git add programa1.c
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo1)
+$ git commit -m "comit de programa1"
+[Equipo1 74e80d7] comit de programa1
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 programa1.c
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo1)
+$ git switch main
+Switched to branch 'main'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main)
+$ git branch Equipo2
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main)
+$ touch programa2.c
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main)
+$ git branch Equipo2
+fatal: a branch named 'Equipo2' already exists
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main)
+$ git switch Equipo1
+Switched to branch 'Equipo1'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo1)
+$ code .
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo1)
+$ git add programa1.c
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo1)
+$ git commit -m "commit del programa 1"
+[Equipo1 c664316] commit del programa 1
+ 1 file changed, 100 insertions(+)
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo1)
+$ git switch main
+Switched to branch 'main'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main)
+$ git swirch Equipo2
+git: 'swirch' is not a git command. See 'git --help'.
+
+The most similar command is
+        switch
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main)
+$ git switch Equipo2
+Switched to branch 'Equipo2'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo2)
+$ fit add .
+bash: fit: command not found
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo2)
+$ git commit -m "comit de todo por que medesespere"
+On branch Equipo2
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .vscode/
+        estudiantes.txt
+        programa1.exe
+        programa2.c
+        programa2.exe
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo2)
+$ git switch main
+Switched to branch 'main'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main)
+$ git branch Equipo3
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main)
+$ git switch Equipo3
+Switched to branch 'Equipo3'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo3)
+$ touch programa3.c
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo3)
+$ git switch main
+Switched to branch 'main'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main)
+$ git switch Equipo2
+Switched to branch 'Equipo2'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo2)
+$ git add .
+warning: in the working copy of '.vscode/tasks.json', LF will be replaced by CRLF the next time Git touches it
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo2)
+$ git commit -m "commit de todo "
+[Equipo2 c6b1307] commit de todo
+ 6 files changed, 156 insertions(+)
+ create mode 100644 .vscode/tasks.json
+ create mode 100644 estudiantes.txt
+ create mode 100644 programa1.exe
+ create mode 100644 programa2.c
+ create mode 100644 programa2.exe
+ create mode 100644 programa3.c
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo2)
+$ git add programa2.c
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo2)
+$ git commit -m "commit de programa2.c"
+On branch Equipo2
+nothing to commit, working tree clean
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo2)
+$ git switch main
+Switched to branch 'main'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main)
+$ git switch Equipo1
+Switched to branch 'Equipo1'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo1)
+$ git switch Equipo2
+Switched to branch 'Equipo2'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo2)
+$ git switch main
+Switched to branch 'main'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main)
+$ git branch Equipo3
+fatal: a branch named 'Equipo3' already exists
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main)
+$ git switch Equipo3
+Switched to branch 'Equipo3'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo3)
+$ touch programa3.c
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo3)
+$ touch programa3_2.c
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo3)
+$ git add programa3_2.c
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo3)
+$ git add programa3.c
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo3)
+$ git commit -m "commit de todos los archivos dentro"
+[Equipo3 3f2913e] commit de todos los archivos dentro
+ 2 files changed, 63 insertions(+)
+ create mode 100644 programa3.c
+ create mode 100644 programa3_2.c
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo3)
+$ git switch main
+Switched to branch 'main'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main)
+$ git switch Equipo3
+Switched to branch 'Equipo3'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo3)
+$ git add .
+warning: in the working copy of '.vscode/tasks.json', LF will be replaced by CRLF the next time Git touches it
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo3)
+$ git commit -m "commit de todo"
+[Equipo3 b1120d9] commit de todo
+ 5 files changed, 34 insertions(+)
+ create mode 100644 .vscode/tasks.json
+ create mode 100644 Departamentos.txt
+ create mode 100644 Nombres.txt
+ create mode 100644 programa3.exe
+ create mode 100644 programa3_2.exe
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo3)
+$ git switch main
+Switched to branch 'main'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main)
+$ git switch Equipo2
+Switched to branch 'Equipo2'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo2)
+$ git switch Equipo2
+Already on 'Equipo2'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo2)
+$ git switch Equipo1
+Switched to branch 'Equipo1'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo1)
+$ git switch Equipo3
+Switched to branch 'Equipo3'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo3)
+$ git switch Equipo3
+Already on 'Equipo3'
+D       Nombres.txt
+D       ejercicios.txt
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo3)
+$
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo3)
+$ git switch Equipo2
+Switched to branch 'Equipo2'
+D       ejercicios.txt
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo2)
+$ git switch Equipo3
+Switched to branch 'Equipo3'
+D       ejercicios.txt
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo3)
+$ git switch Equipo2
+Switched to branch 'Equipo2'
+D       ejercicios.txt
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo2)
+$ git switch Equipo3
+Switched to branch 'Equipo3'
+D       ejercicios.txt
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo3)
+$ git switch Equipo1
+Switched to branch 'Equipo1'
+D       ejercicios.txt
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo1)
+$ git switch main
+Switched to branch 'main'
+D       ejercicios.txt
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main)
+$ git switch Equipo2
+Switched to branch 'Equipo2'
+D       ejercicios.txt
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo2)
+$ git switch Equipo3
+Switched to branch 'Equipo3'
+D       ejercicios.txt
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo3)
+$ git switch Equipo2
+Switched to branch 'Equipo2'
+D       ejercicios.txt
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo2)
+$ git switch Equipo3
+Switched to branch 'Equipo3'
+D       ejercicios.txt
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo3)
+$ git add .
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo3)
+$ git commit -m "commit de todo"
+[Equipo3 950c2ec] commit de todo
+ 5 files changed, 8 insertions(+), 5 deletions(-)
+ delete mode 100644 ejercicios.txt
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo3)
+$ git switch Equipo2
+Switched to branch 'Equipo2'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo2)
+$ git switch main
+error: Your local changes to the following files would be overwritten by checkout:
+        estudiantes.txt
+        programa2.c
+        programa2.exe
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo2)
+$ touch "comandos de git.txt"
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo2)
+$ git switch main
+error: Your local changes to the following files would be overwritten by checkout:
+        estudiantes.txt
+        programa2.c
+        programa2.exe
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo2)
+$ git add .
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo2)
+$ git commit -m "commit de todo"
+[Equipo2 55a71a0] commit de todo
+ 4 files changed, 26 insertions(+), 13 deletions(-)
+ create mode 100644 comandos de git.txt
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo2)
+$ git switch main
+Switched to branch 'main'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main)
+$ git switch Equipo1
+Switched to branch 'Equipo1'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo1)
+$ git switch Equipo2
+Switched to branch 'Equipo2'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo2)
+$ git switch Equipo2
+Already on 'Equipo2'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo2)
+$ git switch Equipo3
+Switched to branch 'Equipo3'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo3)
+$ git switch Equipo2
+Switched to branch 'Equipo2'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo2)
+$ git switch Equipo1
+Switched to branch 'Equipo1'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo1)
+$ git add programa1
+fatal: pathspec 'programa1' did not match any files
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo1)
+$ git add programa1.c
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo1)
+$ git commit -m "commit del programa1.c"
+[Equipo1 88b0e0b] commit del programa1.c
+ 1 file changed, 139 insertions(+), 66 deletions(-)
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo1)
+$ git switch Equipo2
+error: The following untracked working tree files would be overwritten by checkout:
+        .vscode/tasks.json
+        programa1.exe
+Please move or remove them before you switch branches.
+Aborting
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo1)
+$ git add .
+warning: in the working copy of '.vscode/tasks.json', LF will be replaced by CRLF the next time Git touches it
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo1)
+$ git commit -m "commit de todo"
+[Equipo1 3fb8dd9] commit de todo
+ 2 files changed, 28 insertions(+)
+ create mode 100644 .vscode/tasks.json
+ create mode 100644 programa1.exe
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo1)
+$ git switch Equipo2
+Switched to branch 'Equipo2'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo2)
+$ git add programa2.c
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo2)
+$ git commit -m "commit de programa2"
+[Equipo2 208f861] commit de programa2
+ 1 file changed, 143 insertions(+), 52 deletions(-)
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo2)
+$ git add .
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo2)
+$ git commit -m "commit de todo"
+[Equipo2 54b768f] commit de todo
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (Equipo2)
+$ git switch main
+Switched to branch 'main'
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main)
+$ git merge Equipo1
+Updating 7ad49d9..3fb8dd9
+Fast-forward
+ .vscode/tasks.json |  28 +++++++++
+ programa1.c        | 173 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ programa1.exe      | Bin 0 -> 147056 bytes
+ 3 files changed, 201 insertions(+)
+ create mode 100644 .vscode/tasks.json
+ create mode 100644 programa1.c
+ create mode 100644 programa1.exe
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main)
+$ git merge Equipo2
+warning: Cannot merge binary files: programa1.exe (HEAD vs. Equipo2)
+Auto-merging programa1.exe
+CONFLICT (add/add): Merge conflict in programa1.exe
+Automatic merge failed; fix conflicts and then commit the result.
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main|MERGING)
+$ git merge Equipo3
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main|MERGING)
+$ git merge Equipo3
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main|MERGING)
+$ git merge Equipo3
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main|MERGING)
+$ git add .
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main|MERGING)
+$ git commit -m "commit de todo"
+[main 800e21a] commit de todo
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main)
+$ git merge Equipo3
+Merge made by the 'ort' strategy.
+ Departamentos.txt |   6 ++++++
+ Nombres.txt       |   3 +++
+ ejercicios.txt    |   0
+ programa3.c       |  42 ++++++++++++++++++++++++++++++++++++++++++
+ programa3.exe     | Bin 0 -> 140744 bytes
+ programa3_2.c     |  21 +++++++++++++++++++++
+ programa3_2.exe   | Bin 0 -> 141232 bytes
+ 7 files changed, 72 insertions(+)
+ create mode 100644 Departamentos.txt
+ create mode 100644 Nombres.txt
+ delete mode 100644 ejercicios.txt
+ create mode 100644 programa3.c
+ create mode 100644 programa3.exe
+ create mode 100644 programa3_2.c
+ create mode 100644 programa3_2.exe
+
+educacion.ciem@DESKTOP-JDGSFG8 MINGW64 ~/desktop/EXAMENC (main)
+$
