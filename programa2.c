@@ -4,7 +4,7 @@
 
 struct Estudiantes {
     char carnet[20];
-    char nombre[20];
+    char nombre[50];
     char grado[20];
     char departamento[20];
     int edad;
@@ -13,27 +13,42 @@ struct Estudiantes {
 void registrar();
 void listar();
 void buscar();
+void listarPorGrado();
+void editar();
 
 int main() {
     int opcion;
 
     do {
-        printf("Bienvenido a nuestro menu :3\n");
-        printf("Elije una opcion\n");
-        printf("1.Registrar un estudiante\n2.buscar estudiante por carnet\n3.lista de estudiante por grado\n4.Editar un estudiante\n5. salir\n>>");
+        printf("Bienvenido al menu del registro de estudiantes:\n");
+        printf("1. Registrar un estudiante\n");
+        printf("2. Buscar estudiante por carnet\n");
+        printf("3. Lista de estudiantes por grado\n");
+        printf("4. Editar un estudiante\n");
+        printf("5. Salir\n");
+        printf("Ingrese una opcion: ");
         scanf("%d", &opcion);
 
-        if (opcion == 1) {
-            registrar();
-        } else if (opcion == 2) {
-            buscar();
-        } else if (opcion == 4) {
-            printf("Fin del proceso\n");
-            break;
-        } else {
-            printf("Opcion no valida\n");
+        switch(opcion) {
+            case 1:
+                registrar();
+                break;
+            case 2:
+                buscar();
+                break;
+            case 3:
+                listarPorGrado();
+                break;
+            case 4:
+                editar();
+                break;
+            case 5:
+                printf("Saliendo del programa...\n");
+                break;
+            default:
+                printf("Opcion no valida\n");
         }
-    } while (opcion <= 4);
+    } while(opcion != 5);
 
     return 0;
 }
@@ -47,38 +62,38 @@ void registrar() {
     }
 
     struct Estudiantes estudiante;
-    printf("Ingrese el no. de carnet del estudiante\n>>");
-    scanf("%s", &estudiante.carnet);
-    printf("Ingrese el nombre del estudiante\n>>");
-    scanf("%s", &estudiante.nombre);
-    printf("Ingrese el grado del estudiante\n>>");
-    scanf("%s", &estudiante.grado);
-    printf("Ingrese el departamento del estudiante\n>>");
-    scanf("%s", &estudiante.departamento);
-    printf("Ingrese la edad del estudiante\n>>");
-    scanf("%d",&estudiante.edad);
+    printf("Ingrese el carnet del estudiante: ");
+    scanf("%s", estudiante.carnet);
+    printf("Ingrese el nombre del estudiante: ");
+    scanf(" %[^\n]s", estudiante.nombre);  // Lee la línea completa incluyendo espacios
+    printf("Ingrese el grado del estudiante: ");
+    scanf("%s", estudiante.grado);
+    printf("Ingrese el departamento del estudiante: ");
+    scanf("%s", estudiante.departamento);
+    printf("Ingrese la edad del estudiante: ");
+    scanf("%d", &estudiante.edad);
 
-
-    fprintf(fp, "%s\n", estudiante.carnet);
-    fprintf(fp, "%s\n", estudiante.nombre);
-    fprintf(fp, "%s\n", estudiante.grado);
-    fprintf(fp, "%s\n", estudiante.departamento);
-    fprintf(fp, "%d\n", estudiante.edad);
-    fprintf(fp, "-------------------------\n");
+    fwrite(&estudiante, sizeof(struct Estudiantes), 1, fp);
     fclose(fp);
+    printf("Estudiante registrado exitosamente.\n");
 }
 
 void listar() {
     FILE *fp;
-    char leido[100];
+    struct Estudiantes estudiante;
     fp = fopen("estudiantes.txt", "r");
     if (fp == NULL) {
         printf("Error al abrir el archivo\n");
         return;
     }
 
-    while (fgets(leido, sizeof(leido), fp) != NULL) {
-        printf("%s", leido);
+    while (fread(&estudiante, sizeof(struct Estudiantes), 1, fp)) {
+        printf("Carnet: %s\n", estudiante.carnet);
+        printf("Nombre: %s\n", estudiante.nombre);
+        printf("Grado: %s\n", estudiante.grado);
+        printf("Departamento: %s\n", estudiante.departamento);
+        printf("Edad: %d\n", estudiante.edad);
+        printf("-------------------------\n");
     }
     fclose(fp);
 }
@@ -90,28 +105,25 @@ void buscar() {
     int encontrado = 0;
 
     printf("Ingrese el carnet del estudiante a buscar: ");
-    scanf("%s", &carnet);
+    scanf("%s", carnet);
 
     fp = fopen("estudiantes.txt", "r");
-    while (fscanf(fp, "nombre del estudiante: %s\n", &estudiante.nombre) != EOF) {
-        fscanf(fp, "carnet del estudiante: %s\n", &estudiante.carnet);
-        fscanf(fp, "grado del estudiante: %s\n", &estudiante.grado);
-        fscanf(fp, "departamento del estudiante: %s\n", estudiante.departamento);
-        fscanf(fp, "edad del estudiante: %d\n", &estudiante.departamento);
-        fgetc(fp);
+    if (fp == NULL) {
+        printf("Error al abrir el archivo\n");
+        return;
+    }
 
-        if (strcmp(estudiante.carnet,carnet)==0) {
-            printf("Producto encontrado:\n");
-            printf("Nombre: %s\n", &estudiante.nombre);
-            printf("carnet: %s\n", &estudiante.carnet);
-            printf("grado: %s\n", &estudiante.grado);
-            printf("departamento: %s\n", &estudiante.departamento);
-            printf("Edad: %d\n",&estudiante.edad);
+    while (fread(&estudiante, sizeof(struct Estudiantes), 1, fp)) {
+        if (strcmp(estudiante.carnet, carnet) == 0) {
+            printf("Estudiante encontrado:\n");
+            printf("Carnet: %s\n", estudiante.carnet);
+            printf("Nombre: %s\n", estudiante.nombre);
+            printf("Grado: %s\n", estudiante.grado);
+            printf("Departamento: %s\n", estudiante.departamento);
+            printf("Edad: %d\n", estudiante.edad);
             encontrado = 1;
             break;
         }
-        char separador[25];
-        fgets(separador, sizeof(separador), fp);
     }
 
     if (!encontrado) {
@@ -119,4 +131,83 @@ void buscar() {
     }
 
     fclose(fp);
+}
+
+void listarPorGrado() {
+    FILE *fp;
+    struct Estudiantes estudiante;
+    char grado[20];
+    int encontrado = 0;
+
+    printf("Ingrese el grado para listar los estudiantes: ");
+    scanf("%s", grado);
+
+    fp = fopen("estudiantes.txt", "r");
+    if (fp == NULL) {
+        printf("Error al abrir el archivo\n");
+        return;
+    }
+
+    while (fread(&estudiante, sizeof(struct Estudiantes), 1, fp)) {
+        if (strcmp(estudiante.grado, grado) == 0) {
+            printf("Carnet: %s\n", estudiante.carnet);
+            printf("Nombre: %s\n", estudiante.nombre);
+            printf("Grado: %s\n", estudiante.grado);
+            printf("Departamento: %s\n", estudiante.departamento);
+            printf("Edad: %d\n", estudiante.edad);
+            printf("-------------------------\n");
+            encontrado = 1;
+        }
+    }
+
+    if (!encontrado) {
+        printf("No se encontraron estudiantes en el grado %s.\n", grado);
+    }
+
+    fclose(fp);
+}
+
+void editar() {
+    FILE *fp, *temp;
+    char carnet[20];
+    struct Estudiantes estudiante;
+    int encontrado = 0;
+
+    printf("Ingrese el carnet del estudiante a editar: ");
+    scanf("%s", carnet);
+
+    fp = fopen("estudiantes.txt", "r");
+    temp = fopen("temp.txt", "w");
+    if (fp == NULL || temp == NULL) {
+        printf("Error al abrir el archivo\n");
+        return;
+    }
+
+    while (fread(&estudiante, sizeof(struct Estudiantes), 1, fp)) {
+        if (strcmp(estudiante.carnet, carnet) == 0) {
+            printf("Estudiante encontrado. Ingrese los nuevos datos:\n");
+            printf("Ingrese el nombre del estudiante: ");
+            scanf(" %[^\n]s", estudiante.nombre);
+            printf("Ingrese el grado del estudiante: ");
+            scanf("%s", estudiante.grado);
+            printf("Ingrese el departamento del estudiante: ");
+            scanf("%s", estudiante.departamento);
+            printf("Ingrese la edad del estudiante: ");
+            scanf("%d", &estudiante.edad);
+            encontrado = 1;
+        }
+        fwrite(&estudiante, sizeof(struct Estudiantes), 1, temp);
+    }
+
+    fclose(fp);
+    fclose(temp);
+
+    remove("estudiantes.txt");
+    rename("temp.txt", "estudiantes.txt");
+
+    if (encontrado) {
+        printf("Estudiante editado exitosamente.\n");
+    } else {
+        printf("Estudiante con el carnet %s no encontrado.\n", carnet);
+    }
 }
